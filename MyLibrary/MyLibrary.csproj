@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>MVSMyLibrary</PackageId>
     <Version>1.0.3</Version>
     <Authors>Sowmya-mvs</Authors>
     <Company>Microsoft</Company>
     <Description>Simple math utility</Description>
-    <PackageOutputPath>./nupkg</PackageOutputPath>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>./nupkg</PackageOutputPath>    
   </PropertyGroup>
 </Project>
