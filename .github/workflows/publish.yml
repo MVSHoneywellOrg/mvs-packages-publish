@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup .NET SDK
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.x'
@@ -28,7 +28,7 @@ jobs:
         run: dotnet build MyLibrary/MyLibrary.csproj --configuration Release --no-restore
 
       - name: Pack NuGet package
-        run: dotnet pack MyLibrary/MyLibrary.csproj --configuration Release --no-build
+        run: dotnet pack MyLibrary/MyLibrary.csproj --configuration Release --no-build --output ./nupkgs
 
       - name: Push package to GitHub Packages
-        run: dotnet nuget push MyLibrary/bin/Release/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push ./nupkgs/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
