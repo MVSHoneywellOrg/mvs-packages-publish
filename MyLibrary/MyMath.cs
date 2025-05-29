@@ -1,4 +1,3 @@
-/*class*/
 namespace MyLibrary
 {
     public class MyMath
