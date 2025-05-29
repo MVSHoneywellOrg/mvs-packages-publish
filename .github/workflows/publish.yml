@@ -1,11 +1,14 @@
 name: Publish NuGet Package
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
     paths:
       - '**.csproj'
+      
+  
 
 jobs:
   build:
